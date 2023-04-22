@@ -1,0 +1,146 @@
+/* Set background color to dark mode */
+body {
+  background-color: #121212;
+  color: white;
+}
+
+/* Center everything */
+html, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Style the form elements */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+}
+
+label {
+  margin: 1rem;
+  font-size: 4vw;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 2vw;
+  margin: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #242424;
+  color: white;
+  font-size: 3.5vw;
+}
+
+/* Style the generate button */
+#generate_button {
+  padding: 2vw;
+  margin: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #1DA1F2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 4vw;
+}
+
+/* Style the image and tweet button */
+img {
+  max-width: 100%;
+  margin: 2rem;
+}
+
+#tweet_button {
+  display: block;
+  padding: 2vw;
+  margin: 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #1DA1F2;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  font-size: 4vw;
+}
+
+/* Media queries for smaller screens */
+@media only screen and (max-width: 768px) {
+  label {
+    font-size: 5vw;
+  }
+
+  input[type="text"],
+  textarea {
+    font-size: 4vw;
+    padding: 3vw;
+  }
+
+  #generate_button {
+    font-size: 5vw;
+    padding: 3vw;
+  }
+
+  img {
+    margin: 1rem 0;
+  }
+
+  #tweet_button {
+    margin: 1rem 0;
+  }
+
+  h1, p, input[type="text"], textarea, generate_button, label {
+    font-size: 4vw;
+  }
+}
+
+@media only screen and (max-width: 428px) {
+  #generate_button {
+    font-size: 6vw;
+    padding: 4vw;
+    width: 100%;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1c1c1c;
+    color: white;
+  }
+
+  input[type="text"],
+  textarea {
+    background-color: #292929;
+  }
+
+  #generate_button, #tweet_button {
+    background-color: #1DA1F2;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  label {
+    font-size: 3vw;
+  }
+
+  #generate_button {
+    font-size: 3.5vw;
+    padding: 2vw;
+  }
+}

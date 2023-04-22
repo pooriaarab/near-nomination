@@ -1,0 +1,86 @@
+/* Twitter dark mode colors */
+body {
+  background-color: #1c1c1c;
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Center content vertically and horizontally */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Set maximum width and height for image */
+img {
+  max-width: 100%;
+  width: 50%;
+  height: auto;
+}
+
+/* Style download and back to home links to match Twitter */
+a {
+  color: #1DA1F2;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 12px 0;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background-color: #253341;
+}
+
+a:hover {
+  text-decoration: none;
+  background-color: #1a2837;
+}
+
+#back-link {
+  display: block;
+  margin-top: 16px;
+}
+
+#download-link {
+  display: block;
+  margin-top: 16px;
+}
+
+#tweet-link {
+  display: block;
+  margin-top: 16px;
+}
+
+#tweet-link img {
+  height: 24px;
+  margin-right: 8px;
+}
+
+/* Media queries for smaller screens */
+@media only screen and (max-width: 768px) {
+  img {
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+  }
+
+  #back-link,
+  #download-link,
+  #tweet-link {
+    font-size: 5vw;
+    padding: 3vw;
+    margin: 1rem;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}

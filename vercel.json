@@ -1,0 +1,23 @@
+{
+  "projectSettings": {
+    "framework": "python",
+    "buildCommand": "pip install -r requirements.txt && python app.py",
+    "outputDirectory": "./"
+  },
+  "env": {
+    "VERCEL_URL": "nominate"
+  },
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.py"
+    }
+  ]
+}

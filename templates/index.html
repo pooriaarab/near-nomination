@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twitter Nomination Generator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1> Twittation for Top 99 </h1>
+    <p> Nominate your favorite creator, builder, community, or project in Web3</p>
+    <form action="/" method="POST">
+        <label for="twitter_username">Twitter Username:</label>
+        <br>
+        <input type="text" id="twitter_username" name="twitter_username" maxlength="15" size="15" required style="font-size: 64px;" placeholder="@vitalik" oninput="updatePlaceholder()">
+        <br><br>
+        <label for="nomination_reason">Nomination Reason:</label>
+        <br>
+        <textarea id="nomination_reason" name="nomination_reason" required oninput="countChars()" style="font-size: 44px; width: 800px; height: 100px;" placeholder="" ></textarea>
+        <br>
+        <div id="char-count"></div>
+        <br>
+        <button type="submit" id="generate_button" disabled> Nominate </button>
+    </form>
+    {% if image_path %}
+    <img src="{{ image_path }}" alt="{{ twitter_username }}'s nomination image">
+    <a href="https://twitter.com/intent/tweet?text=i%20nominate%20@{{ twitter_username }}%20because%20{{ nomination_reason }}" id="tweet_button" target="_blank">Tweet</a>
+    {% endif %}
+
+    <script>
+        function countChars() {
+            var max_chars = 150;
+            var char_count = document.getElementById('nomination_reason').value.length;
+            var char_diff = max_chars - char_count;
+            var char_count_element = document.getElementById('char-count');
+            char_count_element.innerHTML = char_diff + ' characters remaining';
+            if (char_diff < 0) {
+                char_count_element.innerHTML = Math.abs(char_diff) + ' characters over the limit';
+                char_count_element.style.color = 'red';
+                document.getElementById('generate_button').disabled = true;
+                document.getElementById('generate_button').style.backgroundColor = 'gray';
+            } else {
+                char_count_element.style.color = 'inherit';
+                document.getElementById('generate_button').disabled = false;
+                document.getElementById('generate_button').style.backgroundColor = '#1da1f2';
+            }
+        }
+
+        function updatePlaceholder() {
+            var twitter_username = document.getElementById('twitter_username').value;
+            var nomination_reason_element = document.getElementById('nomination_reason');
+            var placeholder_text = "Why are you nominating " + twitter_username + " for top 99 in web3?";
+            nomination_reason_element.setAttribute("placeholder", placeholder_text);
+        }
+    </script>
+
+</body>
+</html>
